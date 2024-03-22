@@ -7,6 +7,9 @@ import Kamera from './components/Kamera.vue'
     <p>Hallo</p>
     <Kamera></Kamera>
   </header>
+  <body>
+    <p>Hallo</p>
+  </body>
 
   <RouterView />
 </template>
