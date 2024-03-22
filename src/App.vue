@@ -9,9 +9,9 @@ import Kamera from './components/Kamera.vue'
   </header>
   <body>
     <p>Hallo</p>
+    <Kamera/>
   </body>
 
-  <RouterView />
 </template>
 
 <style scoped>
