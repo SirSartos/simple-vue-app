@@ -9,7 +9,7 @@ import Kamera from './components/Kamera.vue'
   </header>
   <body>
     <p>Hallo</p>
-    <Kamera/>
+    
   </body>
   <p>Hallo</p>
 </template>
