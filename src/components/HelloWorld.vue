@@ -1,44 +1,63 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
+<script>
+export default {
+  data(){
+    return{
+      imageList: [],
+      count: 5
+    };
+  },
+  props: {
+    imageData: {
+      type: String, 
+      default: null
+    }
+  },
+  watch: {
+    imageData(newImage){
+      if(newImage){
+        this.imageList.push(newImage);
+        this.count++;
+      }
+    }
+  },
+  methods:{
+    delet(index){
+      this.imageList.splice(index, 1);
+    }
   }
-})
+  
+}
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
+  <div class="grid">
+    <div v-for="(image, index) in imageList" :key="index" class="grid-item">
+          <img :src="image.image_data_url" alt="Captured Image" class="Image">
+          <button @click="delet(index)" class="del">X</button>
+    </div>
   </div>
 </template>
 
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
+<style>
+.Image{
+  width: 100%;
+  height: auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20% ,1fr));
+  grid-gap: 5px;
   position: relative;
-  top: -10px;
 }
-
-h3 {
-  font-size: 1.2rem;
+.grid-item {
+  position: relative;
 }
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+.del{
+  background-color: red;
+  position: absolute;
+  top: 94.5%; 
+  left: 98%; 
+  transform: translate(-50%, -50%);
 }
 </style>
+
