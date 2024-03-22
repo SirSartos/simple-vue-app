@@ -1,6 +1,4 @@
 <script>
-import VueCameraLib from 'vue-camera-lib'
-
      export default{
       components:{
         WebCamUI,
