@@ -1,4 +1,4 @@
-<script setup>
+<script>
      const video = document.getElementById('videoElement');
         const canvas = document.getElementById('canvasElement');
         const captureButton = document.getElementById('captureButton');
