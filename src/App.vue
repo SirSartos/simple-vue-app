@@ -5,7 +5,7 @@ import Kamera from './components/Kamera.vue'
 <template>
   <header>
     <p>Hallo</p>
-    <Kamera></Kamera>
+    
   </header>
   <body>
     <p>Hallo</p>
