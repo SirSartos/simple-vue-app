@@ -11,7 +11,7 @@ import Kamera from './components/Kamera.vue'
     <p>Hallo</p>
     <Kamera/>
   </body>
-
+  <p>Hallo</p>
 </template>
 
 <style scoped>
