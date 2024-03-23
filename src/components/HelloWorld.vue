@@ -24,9 +24,7 @@ export default {
   methods:{
     delet(index){
       this.imageList.splice(index, 1);
-    }
-  },
-  mounted:{
+    },
     async getImage(){
       try{
         this.imageList = axios.get('http://localhost:3000/getImage');
@@ -35,9 +33,12 @@ export default {
         console.error('Fehler beim Hohlen der Daten:', error);
       }
     }
+  },
+  mounted() {
+    this.getImage();
   }
   
-}
+};
 </script>
 
 <template>
