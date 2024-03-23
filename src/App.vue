@@ -24,9 +24,9 @@ export default {
 <template>
   <div class="all">
     <div class="container">
-        <Kamera @ImageTaken="handleImageTaken"></Kamera>
+        <Kamera></Kamera>
     </div>
-    <HelloWorld :imageData="imageData"></HelloWorld>
+    <HelloWorld></HelloWorld>
   </div>
 </template>
 

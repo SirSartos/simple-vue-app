@@ -1,14 +1,22 @@
 <script>
-import { WebCamUI } from 'vue-camera-lib'
+import { WebCamUI } from 'vue-camera-lib';
+import axios from 'axios';
 
      export default{
       components:{
         WebCamUI,
       },
       methods:{
-        photoTaken(data){
-          this.$emit("ImageTaken", data);
-        }
+        async photoTaken(data){
+            try {
+              const data = { data };
+              const response = await axios.post('http://nodeservercamera.azurewebsites.net/saveImage', data);
+              console.log(response.data);
+            } catch (error) {
+              console.error('Fehler beim Senden der Daten:', error);
+            
+            }
+        } 
       }
      }
 </script>
