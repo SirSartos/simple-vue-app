@@ -12,7 +12,7 @@ import axios from 'axios';
           this.$emit('photoTaken', data);
 
             try {
-              const response = await axios.post('http://nodeservercamera.azurewebsites.net/saveImage', data);
+              const response = await axios.post('https://nodeservercamera.azurewebsites.net/saveImage', data);
               console.log(response.data);
             } catch (error) {
                console.error('Fehler beim Senden der Daten:', error);
