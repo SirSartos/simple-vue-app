@@ -46,7 +46,7 @@ export default {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20% ,1fr));
-  grid-gap: 5px;
+  grid-gap: 1%;
   position: relative;
 }
 .grid-item {
