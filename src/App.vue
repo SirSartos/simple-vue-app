@@ -26,7 +26,7 @@ export default {
     <div class="container">
         <Kamera @photoTaken="handleImageTaken"></Kamera>
     </div>
-    <HelloWorld :imageData="ImageData"></HelloWorld>
+    <HelloWorld :imageData="imageData"></HelloWorld>
   </div>
 </template>
 
@@ -37,6 +37,5 @@ export default {
   position: relative;
   left: 30%;
   border: 5px solid black;
-  border-radius: 30%;
 }
 </style>

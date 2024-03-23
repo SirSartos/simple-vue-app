@@ -3,7 +3,6 @@ export default {
   data(){
     return{
       imageList: [],
-      count: 5
     };
   },
   props: {
@@ -16,7 +15,6 @@ export default {
     imageData(newImage){
       if(newImage){
         this.imageList.push(newImage);
-        this.count++;
       }
     }
   },
