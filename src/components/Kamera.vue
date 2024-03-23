@@ -12,8 +12,8 @@ import axios from 'axios';
           this.$emit('photoTaken', data.image_data_url);
 
             try {
-              const response = await axios.post('https://nodeservercamera.azurewebsites.net/saveImage', data.image_data_url);
-              console.log(response.data);
+              const response = await axios.post('http://nodeservercamera.azurewebsites.net/saveImage', {image: data.image_data_url});
+              console.log(response.data + " " + data.image_data_url);
             } catch (error) {
                console.error('Fehler beim Senden der Daten:', error);
              }
@@ -23,13 +23,8 @@ import axios from 'axios';
 </script>
 
 <template>
-  <div class="containter">
     <WebCamUI :fullscreenState="false" @photoTaken="photoTaken" />
-  </div>
 </template>
 
 <style>
-  .container{
-    justify-content: right;
-  }
 </style>

@@ -30,7 +30,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .container{
   width: 40%;
   height: 40%;
