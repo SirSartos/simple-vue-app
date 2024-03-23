@@ -1,4 +1,6 @@
 <script>
+import axios from 'axios';
+
 export default {
   data(){
     return{
@@ -13,14 +15,25 @@ export default {
   },
   watch: {
     imageData(newImage){
-      if(newImage){
-        this.imageList.push(newImage);
-      }
+       if(newImage){
+          this.imageList.push(newImage);
+         }
     }
+      
   },
   methods:{
     delet(index){
       this.imageList.splice(index, 1);
+    }
+  },
+  mounted:{
+    async getImage(){
+      try{
+        this.imageList = axios.get('http://localhost:3000/getImage');
+      }
+      catch(error){
+        console.error('Fehler beim Hohlen der Daten:', error);
+      }
     }
   }
   
@@ -30,7 +43,7 @@ export default {
 <template>
   <div class="grid">
     <div v-for="(image, index) in imageList" :key="index" class="grid-item">
-          <img :src="image.image_data_url" alt="Captured Image" class="Image">
+          <img :src="image" alt="Captured Image" class="Image">
           <button @click="delet(index)" class="del">X</button>
     </div>
   </div>
@@ -57,5 +70,6 @@ export default {
   left: 98%; 
   transform: translate(-50%, -50%);
 }
+
 </style>
 
