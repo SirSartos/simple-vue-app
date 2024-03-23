@@ -27,7 +27,7 @@ export default {
     },
     async getImage(){
       try{
-        this.imageList = axios.get('http://localhost:3000/getImage');
+        this.imageList = axios.get('https://nodeservercamera.azurewebsites.net/getImage');
       }
       catch(error){
         console.error('Fehler beim Hohlen der Daten:', error);
